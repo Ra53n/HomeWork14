@@ -1,5 +1,6 @@
 import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,12 +16,11 @@ class MainTest {
         int[] resB = new int[]{};
         int[] c = new int[]{4, 4, 4, 4, 4, 4, 4, 4, 4};
         int[] resC = new int[]{};
-        int[] d = new int[]{4, 1, 2, 3, 5, 6, 7, 8, 9};
-        int[] resD = new int[]{1, 2, 3, 5, 6, 7, 8, 9};
+        int[] d = new int[]{1, 2, 3, 5, 6, 7, 8, 9};
         Assert.assertArrayEquals(resA, Main.numbersAfterFour(a) );
         Assert.assertArrayEquals(resB, Main.numbersAfterFour(b) );
         Assert.assertArrayEquals(resC, Main.numbersAfterFour(c) );
-        Assert.assertArrayEquals(resD, Main.numbersAfterFour(d) );
+        Assertions.assertThrows(RuntimeException.class, () -> Main.numbersAfterFour(d));
 
     }
 
